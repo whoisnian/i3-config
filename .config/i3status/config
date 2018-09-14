@@ -35,7 +35,7 @@ disk "/home" {
 
 load {
         # 平均负载（1分钟）
-        format = " %1min"
+        format = " %1min"
         max_threshold = "1.5"
 }
 

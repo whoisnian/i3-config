@@ -10,7 +10,7 @@
 * scrot
 * alsa-utils
 * xorg-xinit
-* ttf-font-awesome
+* otf-font-awesome
 * wqy-microhei
 * numix-circle-icon-theme
 * numix-gtk-theme
