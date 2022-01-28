@@ -1,82 +1,73 @@
-# i3status configuration file.
-# see "man i3status" for documentation.
-
-# It is important that this file is edited as UTF-8.
-# The following line should contain a sharp s:
-# ß
-# If the above line is not correctly displayed, fix your editor first!
+# From: https://fontawesome.com
+#   Font Awesome 5 Free Solid
+#   Font Awesome 5 Free
+#   Font Awesome 5 Brands
 
 general {
-        # i3status 颜色
-        colors = true
-
-        # 刷新间隔
-        interval = 1
+    interval = 1
+    output_format = "i3bar"
+    markup = "pango"
+    colors = true
+    color_good = "#27ae60"
+    color_degraded = "#f67400"
+    color_bad = "#da4453"
 }
 
 order += "disk /"
-order += "disk /home"
-order += "load"
+order += "cpu_usage"
+order += "memory"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "volume master"
 order += "battery all"
-order += "tztime local"
+order += "time"
 
 disk "/" {
-        # 硬盘已用容量 /
-        format = " %percentage_used"
+    format = "<span color='#cccccc'> %percentage_used</span>"
 }
 
-disk "/home" {
-        # 硬盘已用容量 /home
-        format = " %percentage_used"
+cpu_usage {
+    format = "<span color='#1d99f3'> %usage</span>"
 }
 
-load {
-        # 平均负载（1分钟）
-        format = " %1min"
-        max_threshold = "1.5"
+memory {
+    format = "<span color='#9b59b6'> %percentage_used</span>"
 }
 
 wireless _first_ {
-        # 无线网络连接状态
-        format_up = " %quality %ip"
-        format_down = " off"
+    format_up = " (%quality at %essid, %bitrate / %frequency) %ip"
+    format_down = " off"
 }
 
 ethernet _first_ {
-        # 有线网络连接状态
-        format_up = " %ip"
-        format_down = " off"
+    format_up = " %ip (%speed)"
+    format_down = " off"
 }
 
 volume master {
-        # 音量显示
-        format = " %volume"
-        format_muted = " %volume"
-        device = "default"
-        mixer = "Master"
-        mixer_idx = 0
+    format = " %volume"
+    format_muted = " %volume"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
 }
 
 battery all {
-        # 忽略电池损耗
-        last_full_capacity = false
+    # 忽略电池损耗
+    last_full_capacity = false
 
-        # 电量报警线（time 或 percentage）
-        threshold_type = percentage
-        low_threshold = 20
+    # 电量报警线（time 或 percentage）
+    threshold_type = percentage
+    low_threshold = 20
 
-        # 电量及剩余时间显示
-        status_chr = " "
-        status_bat = " "
-        status_unk = "? " 
-        status_full = " "
-        format = "%status%percentage %remaining"
+    # 电量及剩余时间显示
+    status_chr = " "
+    status_bat = " "
+    status_unk = "? " 
+    status_full = " "
+    format = "%status%percentage %remaining"
 }
 
-tztime local {
-        # 日期和时间
-        format = " %Y-%m-%d %H:%M"
+time {
+    format = " %m-%d %H:%M"
 }
