@@ -162,10 +162,9 @@ bar {
         status_command i3status
 }
 
-exec --no-startup-id fcitx
+exec --no-startup-id fcitx5
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-fill /home/nian/Yun/wallpaper/ring.2560x1440.png
-
+exec --no-startup-id feh --bg-fill ~/.config/wallpapers/plasma-5.24/3840x2160.jpg
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
