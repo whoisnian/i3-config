@@ -35,13 +35,13 @@ memory {
 }
 
 wireless _first_ {
-    format_up = " (%quality at %essid, %bitrate / %frequency) %ip"
+    format_up = " %ip"
     format_down = " off"
 }
 
 ethernet _first_ {
-    format_up = " %ip (%speed)"
-    format_down = " off"
+    format_up = " %ip"
+    format_down = " off"
 }
 
 volume master {
