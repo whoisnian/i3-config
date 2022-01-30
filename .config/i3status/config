@@ -23,7 +23,7 @@ order += "battery all"
 order += "time"
 
 disk "/" {
-    format = "<span color='#cccccc'> %percentage_used</span>"
+    format = "<span color='#eff0f1'> %percentage_used</span>"
 }
 
 cpu_usage {
@@ -35,39 +35,35 @@ memory {
 }
 
 wireless _first_ {
-    format_up = " %ip"
-    format_down = " off"
+    format_up = "<span color='#27ae60'> %ip</span>"
+    format_down = "<span color='#da4453'> off</span>"
 }
 
 ethernet _first_ {
-    format_up = " %ip"
-    format_down = " off"
+    format_up = "<span color='#27ae60'> %ip</span>"
+    format_down = "<span color='#da4453'> off</span>"
 }
 
 volume master {
-    format = " %volume"
-    format_muted = " %volume"
+    align = center
+    min_width = 60
+    format = "<span color='#f67400'> %volume</span>"
+    format_muted = "<span color='#da4453'> %volume</span>"
     device = "default"
-    mixer = "Master"
-    mixer_idx = 0
 }
 
 battery all {
-    # 忽略电池损耗
+    format_down = "<span color='#27ae60'></span>"
+
     last_full_capacity = false
-
-    # 电量报警线（time 或 percentage）
-    threshold_type = percentage
-    low_threshold = 20
-
-    # 电量及剩余时间显示
-    status_chr = " "
-    status_bat = " "
-    status_unk = "? " 
-    status_full = " "
-    format = "%status%percentage %remaining"
+    integer_battery_capacity = true
+    status_chr = ""
+    status_bat = ""
+    status_unk = "?"
+    status_full = ""
+    format = "<span color='#fdbc4b'>%status %percentage</span>"
 }
 
 time {
-    format = " %m-%d %H:%M"
+    format = "<span color='#eff0f1'> %m-%d %H:%M</span>"
 }
