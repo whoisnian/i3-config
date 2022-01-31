@@ -10,4 +10,5 @@ sudo pacman -S noto-fonts-cjk noto-fonts-emoji wqy-microhei ttf-hack otf-font-aw
 sudo pacman -S network-manager-applet polkit dnsmasq
 sudo pacman -S alacritty feh fcitx5-im fcitx5-chinese-addons
 sudo pacman -S man-db
+sudo pacman -S papirus-icon-theme qt5ct breeze breeze-gtk
 ```
